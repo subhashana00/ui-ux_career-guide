@@ -37,14 +37,16 @@ export default function Footer() {
 
         <div className="flex flex-wrap justify-center gap-3 mt-4">
           {[
-            { icon: 'fab fa-linkedin', label: 'LinkedIn', color: 'hover:text-blue-500' },
-            { icon: 'fab fa-dribbble', label: 'Dribbble', color: 'hover:text-pink-500' },
-            { icon: 'fab fa-behance', label: 'Behance', color: 'hover:text-blue-600' },
-            { icon: 'fas fa-envelope', label: 'Email', color: 'hover:text-orange-500' },
-          ].map(({ icon, label, color }) => (
+            { icon: 'fab fa-linkedin', label: 'LinkedIn', color: 'hover:text-blue-500', href: 'https://www.linkedin.com/in/prabhath-subhashana-6b694a20a/' },
+            { icon: 'fab fa-behance', label: 'Behance', color: 'hover:text-blue-600', href: 'https://www.behance.net/prabathsubasha' },
+            { icon: 'fas fa-globe', label: 'Portfolio', color: 'hover:text-orange-500', href: 'https://subhashana00.github.io/prabhath-portfolio/' },
+            { icon: 'fas fa-envelope', label: 'Email', color: 'hover:text-red-500', href: 'mailto:prabathsubashana18@gmail.com' },
+          ].map(({ icon, label, color, href }) => (
             <a
               key={label}
-              href="#"
+              href={href}
+              target={href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
               className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-stone-200 text-stone-400 transition-colors ${color} hover:border-current text-sm`}
             >
               <i className={icon}></i> {label}
