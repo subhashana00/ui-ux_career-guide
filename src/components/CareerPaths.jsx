@@ -180,17 +180,17 @@ export default function CareerPaths() {
               <div className="space-y-4">
                 {jobSteps.map((s, i) => (
                   <div key={i} className="flex gap-4 items-start bg-stone-50 p-4 rounded-xl">
-                    <div className="w-9 h-9 rounded-full bg-stone-200 flex-shrink-0 flex items-center justify-center text-stone-600 text-sm">
+                    <div className="w-9 h-9 rounded-full bg-stone-200 flex-shrink-0 flex items-center justify-center text-stone-600 text-sm font-bold">
                       {i + 1}
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-stone-800 mb-0.5">{s.title}</p>
-                      <p className="text-xs text-stone-500 leading-relaxed">{s.desc}</p>
+                      <p className="font-semibold text-stone-800 mb-1">{s.title}</p>
+                      <p className="text-sm text-stone-600 leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 bg-blue-50 border border-blue-100 rounded-xl p-3 text-xs text-blue-700">
+              <div className="mt-4 bg-blue-50 border border-blue-100 rounded-xl p-3 text-sm text-blue-700">
                 <i className="fas fa-info-circle mr-1.5"></i>
                 <strong>My advice:</strong> Get a job first. Work for 1–2 years. Learn the craft in a team environment.
                 Then freelance on the side or go full freelance with real experience to back you up.
@@ -261,9 +261,9 @@ export default function CareerPaths() {
                     </div>
                     {expandedStep === i && (
                       <div className="px-4 pb-4 pt-0 space-y-2">
-                        <p className="text-xs text-stone-600 leading-relaxed">{s.desc}</p>
+                        <p className="text-sm text-stone-600 leading-relaxed">{s.desc}</p>
                         {s.tip && (
-                          <p className="text-xs text-orange-700 bg-white border border-orange-100 rounded-lg px-3 py-2">
+                          <p className="text-sm text-orange-700 bg-white border border-orange-100 rounded-lg px-3 py-2">
                             <i className="fas fa-lightbulb mr-1.5"></i>{s.tip}
                           </p>
                         )}
@@ -277,16 +277,16 @@ export default function CareerPaths() {
 
           {/* Platforms */}
           <div className="bg-white rounded-2xl border border-stone-200 p-6">
-            <h4 className="font-bold text-stone-700 mb-4">Where to Find Clients</h4>
+            <h4 className="font-bold text-lg text-stone-700 mb-4">Where to Find Clients</h4>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
               {platforms.map((p) => (
-                <div key={p.name} className={`p-3 rounded-xl border flex gap-3 items-start ${p.best ? 'border-orange-200 bg-orange-50' : 'border-stone-200 bg-stone-50'}`}>
-                  <i className={`fas ${p.icon} ${p.best ? 'text-orange-500' : 'text-stone-400'} mt-0.5`}></i>
+                <div key={p.name} className={`p-4 rounded-xl border flex gap-3 items-start ${p.best ? 'border-orange-200 bg-orange-50' : 'border-stone-200 bg-stone-50'}`}>
+                  <i className={`fas ${p.icon} ${p.best ? 'text-orange-500' : 'text-stone-400'} mt-1 text-lg`}></i>
                   <div>
-                    <p className="font-bold text-sm text-stone-800">
-                      {p.name} {p.best && <span className="text-xs text-orange-600">(Recommended)</span>}
+                    <p className="font-bold text-stone-800">
+                      {p.name} {p.best && <span className="text-xs text-orange-600 ml-1">(Recommended)</span>}
                     </p>
-                    <p className="text-xs text-stone-500">{p.desc}</p>
+                    <p className="text-sm text-stone-600">{p.desc}</p>
                   </div>
                 </div>
               ))}
@@ -295,19 +295,19 @@ export default function CareerPaths() {
 
           {/* Pricing mindset */}
           <div className="bg-stone-800 rounded-2xl p-6 text-stone-200">
-            <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+            <h4 className="font-bold text-lg text-white mb-4 flex items-center gap-2">
               <i className="fas fa-coins text-orange-400"></i> Pricing Mindset — The Mistakes I See Beginners Make
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {pricingTips.map(({ bad, good }, i) => (
                 <div key={i} className="grid md:grid-cols-2 gap-3">
-                  <div className="bg-red-900/30 border border-red-800/40 rounded-xl p-3 text-xs">
-                    <span className="text-red-400 font-bold">✗ Don't say:</span>
-                    <p className="text-stone-300 mt-1 italic">"{bad}"</p>
+                  <div className="bg-red-900/30 border border-red-800/40 rounded-xl p-4 text-sm">
+                    <span className="text-red-400 font-bold block mb-1">✗ Don't say:</span>
+                    <p className="text-stone-300 italic">"{bad}"</p>
                   </div>
-                  <div className="bg-green-900/30 border border-green-800/40 rounded-xl p-3 text-xs">
-                    <span className="text-green-400 font-bold">✓ Say instead:</span>
-                    <p className="text-stone-200 mt-1">"{good}"</p>
+                  <div className="bg-green-900/30 border border-green-800/40 rounded-xl p-4 text-sm">
+                    <span className="text-green-400 font-bold block mb-1">✓ Say instead:</span>
+                    <p className="text-stone-200">"{good}"</p>
                   </div>
                 </div>
               ))}
@@ -315,6 +315,82 @@ export default function CareerPaths() {
           </div>
         </div>
       )}
+
+      {/* NEW: Portfolio & Case Study Guide (Universal for both paths) */}
+      <div className="mt-16 pt-10 border-t border-stone-200">
+        <h3 className="text-2xl font-bold text-stone-800 mb-6 text-center">
+          <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            The Golden Ticket: Your Portfolio
+          </span>
+        </h3>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* 1. Where to Host */}
+          <div className="bg-white p-6 rounded-2xl border border-stone-200">
+            <h4 className="font-bold text-lg text-stone-700 mb-4 flex items-center gap-2">
+              <i className="fas fa-globe text-blue-500"></i> Where to Host Your Work?
+            </h4>
+            <div className="space-y-4">
+              {[
+                { 
+                  name: 'Behance', 
+                  tags: ['Free', 'Community', 'Discovery'], 
+                  desc: 'Best for beginners. Free, easy to upload, and recruiters search here. Great for visual-heavy case studies.' 
+                },
+                { 
+                  name: 'Dribbble', 
+                  tags: ['Visuals', 'UI Focus', 'Invites'], 
+                  desc: 'The "Instagram" for designers. Good for showing off single screens or "shots". Less focus on deep UX process.' 
+                },
+                { 
+                  name: 'Custom Site (Framer/Webflow)', 
+                  tags: ['Pro', 'Personal Brand', 'SEO'], 
+                  desc: 'The ultimate goal. Total control over your story. Use Framer templates to launch in hours without coding.' 
+                }
+              ].map((p, i) => (
+                <div key={i} className="group">
+                  <div className="flex justify-between items-center mb-1">
+                    <h5 className="font-bold text-stone-800">{p.name}</h5>
+                    <div className="flex gap-1">
+                      {p.tags.map(t => (
+                        <span key={t} className="text-xs uppercase font-bold bg-stone-100 text-stone-500 px-2 py-0.5 rounded">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-stone-600 leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 2. How to Write a Case Study */}
+          <div className="bg-stone-50 p-6 rounded-2xl border border-stone-200">
+            <h4 className="font-bold text-lg text-stone-700 mb-4 flex items-center gap-2">
+              <i className="fas fa-book-open text-purple-500"></i> Anatomy of a Perfect Case Study
+            </h4>
+            <div className="space-y-0 relative">
+              {/* Vertical line */}
+              <div className="absolute left-3.5 top-2 bottom-2 w-0.5 bg-stone-200"></div>
+
+              {[
+                { title: 'The Problem Statement', desc: '1 sentence. "Users couldn\'t find the checkout button, leading to a 40% drop-off."' },
+                { title: 'My Role & Timeline', desc: 'UI Designer · 2 Weeks · Solo Project' },
+                { title: 'Research & Discovery', desc: 'Show 2-3 key insights from user interviews or competitor analysis. No wall of text.' },
+                { title: 'The Solution (Visuals)', desc: 'Before & After screenshots. High-fidelity prototypes. Show the "Happy Path".' },
+                { title: 'The Impact', desc: 'Did conversions go up? Did users save time? If it\'s a concept, what did YOU learn?' }
+              ].map((step, i) => (
+                <div key={i} className="relative pl-10 pb-5 last:pb-0">
+                  <div className="absolute left-0 top-0.5 w-7 h-7 rounded-full bg-white border-2 border-purple-200 text-purple-600 flex items-center justify-center text-sm font-bold z-10">
+                    {i + 1}
+                  </div>
+                  <h5 className="font-semibold text-stone-800 text-sm mb-1">{step.title}</h5>
+                  <p className="text-sm text-stone-600">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

@@ -144,7 +144,7 @@ export default function Toolkit() {
                 <span className="text-xs text-orange-600 font-medium">{tool.note}</span>
               </div>
             </div>
-            <p className="text-xs text-stone-500 leading-relaxed">{tool.desc}</p>
+            <p className="text-sm text-stone-600 leading-relaxed">{tool.desc}</p>
           </div>
         ))}
       </div>
@@ -182,6 +182,10 @@ export default function Toolkit() {
             { 
               name: 'UX Pilot', 
               desc: 'Comprehensive AI platform for the entire UX workflow: requirements gathering, workshops, wireframing, and high-fidelity prototyping with strong Figma integration.' 
+            },
+            { 
+              name: 'Visily', 
+              desc: 'AI-powered wireframing tool that converts screenshots or sketches into editable UI designs. great for quick ideation and non-designers.' 
             }
           ].map((tool) => (
             <div key={tool.name} className="bg-white p-4 rounded-xl shadow-sm border border-stone-100">
@@ -211,7 +215,7 @@ export default function Toolkit() {
               <h5 className="font-bold text-stone-800 mb-3">{title}</h5>
               <ul className="space-y-2">
                 {items.map((item) => (
-                  <li key={item} className="flex gap-2 text-xs text-stone-600">
+                  <li key={item} className="flex gap-2 text-sm text-stone-600">
                     <i className="fas fa-check text-orange-400 mt-0.5 flex-shrink-0"></i>
                     {item}
                   </li>
@@ -236,9 +240,9 @@ export default function Toolkit() {
               </h4>
               <ul className="space-y-3">
                 {items.map(({ name, desc }) => (
-                  <li key={name} className="text-xs">
-                    <p className="font-bold text-stone-700">{name}</p>
-                    <p className="text-stone-500 mt-0.5">{desc}</p>
+                  <li key={name} className="flex flex-col gap-0.5">
+                    <p className="text-sm font-bold text-stone-700">{name}</p>
+                    <p className="text-sm text-stone-600">{desc}</p>
                   </li>
                 ))}
               </ul>
