@@ -74,7 +74,17 @@ const learnSources = [
       { name: 'Daily UI Challenge', desc: 'dailyui.co — one design prompt per day for 100 days' },
       { name: 'Dribbble & Behance', desc: 'Study what good design looks like. Build your portfolio.' },
       { name: 'ADPList.org', desc: 'Free 1-on-1 mentorship from senior designers worldwide' },
+    ],
+  },
+  {
+    category: 'Courses & Platforms',
+    icon: 'fa-graduation-cap',
+    color: 'bg-yellow-50 border-yellow-100',
+    titleColor: 'text-yellow-700',
+    items: [
       { name: 'Google UX Design Certificate', desc: 'Coursera — best free structured beginner course' },
+      { name: 'Udemy', desc: 'Wide variety of specific skill courses (look for top rated)' },
+      { name: 'UXCEL', desc: 'Gamified UX learning platform with interactive lessons' },
     ],
   },
 ]
@@ -218,7 +228,7 @@ export default function Toolkit() {
           <i className="fas fa-book-reader text-orange-400"></i>
           Where I Actually Learned — My Sources
         </h3>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {learnSources.map(({ category, icon, color, titleColor, items }) => (
             <div key={category} className={`${color} border rounded-2xl p-5`}>
               <h4 className={`font-bold mb-3 flex items-center gap-2 ${titleColor}`}>
