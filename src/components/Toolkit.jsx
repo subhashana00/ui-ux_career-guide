@@ -133,6 +133,49 @@ export default function Toolkit() {
         ))}
       </div>
 
+      {/* Featured AI Tools Section */}
+      <div className="mb-12 bg-stone-50 rounded-2xl p-6 md:p-8 border border-stone-200">
+        <h3 className="text-2xl font-bold text-stone-800 mb-3">6 Best AI Tools for UI Design: Detailed Overview</h3>
+        <p className="text-stone-600 mb-6 max-w-3xl">
+          Modern AI UI tools vary widely in depth, flexibility, and production readiness. Some focus on rapid concept generation, while others are built to integrate directly into real product development workflows. The tools listed below represent the most capable and practical options available today.
+          Here’s the list of 6 best AI tools for UI design that actually work in 2026:
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { 
+              name: 'Emergent', 
+              desc: 'A "vibe coding" platform that builds production-ready, full-stack web and mobile apps from natural language prompts. Handles frontend, backend, and deployment via AI agents.' 
+            },
+            { 
+              name: 'Banani', 
+              desc: 'AI UI design copilot tailored for rapid prototyping. Generates editable, multi-screen user interfaces and wireframes directly from text descriptions at high speed.' 
+            },
+            { 
+              name: 'Framer', 
+              desc: 'The bridge between design and code. Uses AI to generate entire interactive websites from a single prompt, producing publishable React-based sites instantly.' 
+            },
+            { 
+              name: 'Google Stitch', 
+              desc: 'Gemini 2.5-powered design tool. Converts text prompts, sketches, or screenshots into responsive UI layouts with iterative refinement. Exports directly to Figma.' 
+            },
+            { 
+              name: 'Galileo AI', 
+              desc: 'Leading text-to-UI platform generating high-fidelity, editable interface designs in Figma. Perfect for creating instant design variations and complex dashboards.' 
+            },
+            { 
+              name: 'UX Pilot', 
+              desc: 'Comprehensive AI platform for the entire UX workflow: requirements gathering, workshops, wireframing, and high-fidelity prototyping with strong Figma integration.' 
+            }
+          ].map((tool) => (
+            <div key={tool.name} className="bg-white p-4 rounded-xl shadow-sm border border-stone-100">
+              <h4 className="font-bold text-lg text-stone-800 mb-2">{tool.name}</h4>
+              <p className="text-sm text-stone-600 leading-relaxed">{tool.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Self-Learning Roadmap toggle */}
       <div className="mb-6">
         <button
